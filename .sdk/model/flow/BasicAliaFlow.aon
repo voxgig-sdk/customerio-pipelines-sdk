@@ -1,0 +1,18 @@
+# BasicAliaFlow
+
+main: kit: flow: BasicAliaFlow:
+{
+  entity: "alia",
+  kind: "basic",
+  name: "BasicAliaFlow",
+  step: [
+    {
+      input: {
+        ref: "alia_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicAliaFlow"
+}

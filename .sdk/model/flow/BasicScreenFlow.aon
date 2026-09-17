@@ -1,0 +1,18 @@
+# BasicScreenFlow
+
+main: kit: flow: BasicScreenFlow:
+{
+  entity: "screen",
+  kind: "basic",
+  name: "BasicScreenFlow",
+  step: [
+    {
+      input: {
+        ref: "screen_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicScreenFlow"
+}

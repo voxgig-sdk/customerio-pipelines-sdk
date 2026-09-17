@@ -1,0 +1,18 @@
+# BasicTrackFlow
+
+main: kit: flow: BasicTrackFlow:
+{
+  entity: "track",
+  kind: "basic",
+  name: "BasicTrackFlow",
+  step: [
+    {
+      input: {
+        ref: "track_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTrackFlow"
+}

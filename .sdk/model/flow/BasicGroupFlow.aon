@@ -1,0 +1,18 @@
+# BasicGroupFlow
+
+main: kit: flow: BasicGroupFlow:
+{
+  entity: "group",
+  kind: "basic",
+  name: "BasicGroupFlow",
+  step: [
+    {
+      input: {
+        ref: "group_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicGroupFlow"
+}

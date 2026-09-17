@@ -1,0 +1,94 @@
+{
+  "existing": {
+    "alia": {
+      "ALIA00": {
+        "previousId": "s14",
+        "userId": "s15",
+        "id": "ALIA00"
+      },
+      "ALIA01": {
+        "previousId": "s28",
+        "userId": "s29",
+        "id": "ALIA01"
+      },
+      "ALIA02": {
+        "previousId": "s3c",
+        "userId": "s3d",
+        "id": "ALIA02"
+      }
+    }
+  },
+  "new": {
+    "alia": {
+      "alia_ref01": {
+        "previousId": "s50",
+        "userId": "s51"
+      }
+    }
+  },
+  "requests": {
+    "POST /alias": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "alias",
+        "parameters": [
+          {
+            "description": "When set to `1`, enables strict validation that returns proper HTTP error codes (400/401) for validation failures. When not set or set to any other value, the API operates in permissive mode, logging errors but returning HTTP 200. [Learn more](/integrations/api/track-vs-cdp-api/#pipelines-strict-mode)\n",
+            "example": "1",
+            "in": "header",
+            "name": "X-Strict-Mode",
+            "required": false,
+            "schema": {
+              "enum": [
+                "1"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "previousId": {
+                    "description": "The anonymousId or userId value that you want to merge into the canonical profile.",
+                    "type": "string"
+                  },
+                  "userId": {
+                    "description": "The userId that you want to keep. This is required if you haven't already identified someone with one of our web or server-side libraries.\n",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "previousId",
+                  "userId"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "A successful request returns an empty object response."
+          }
+        },
+        "security": [
+          {
+            "Basic-Auth": []
+          }
+        ],
+        "securitySchemes": {
+          "Basic-Auth": {
+            "description": "The Data Pipelines API uses a basic authentication scheme with your API key. Because basic authorization typically expects a username and password combination, you'll use the API Key as the username and leave the password blank—base64 encoding your credentials in the format `API_key:`.\n",
+            "scheme": "basic",
+            "type": "http"
+          }
+        },
+        "securitySource": "operation"
+      }
+    }
+  }
+}

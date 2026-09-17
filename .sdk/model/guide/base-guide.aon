@@ -1,0 +1,51 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 7
+  metrics: count: path: 7
+  metrics: count: method: 7
+
+  entity: alia: {
+    path: "/alias": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: batch: {
+    path: "/batch": {
+      op: create: method: *POST
+      op: create: transform: req: "batch": *("`reqdata`")|top
+    }
+  }
+
+  entity: group: {
+    path: "/group": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: identify: {
+    path: "/identify": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: page: {
+    path: "/page": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: screen: {
+    path: "/screen": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: track: {
+    path: "/track": {
+      op: create: method: *POST
+    }
+  }
+
+}

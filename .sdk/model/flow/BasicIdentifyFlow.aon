@@ -1,0 +1,18 @@
+# BasicIdentifyFlow
+
+main: kit: flow: BasicIdentifyFlow:
+{
+  entity: "identify",
+  kind: "basic",
+  name: "BasicIdentifyFlow",
+  step: [
+    {
+      input: {
+        ref: "identify_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicIdentifyFlow"
+}
